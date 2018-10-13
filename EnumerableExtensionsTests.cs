@@ -27,5 +27,23 @@ namespace DiamondKata
                 "b",
                 "a");
         }
+
+        [Fact]
+        public void Mirror_Should_Repeat_In_Reversed_Order_All_Items_But_The_Last_One_Given_Any_Other_Enumerable()
+        {
+            var items = new[]
+            {
+                "a",
+                "b",
+                "c"
+            };
+            var result = items.Mirror();
+            result.Should().ContainInOrder(
+                "a",
+                "b",
+                "c",
+                "b",
+                "a");
+        }
     }
 }

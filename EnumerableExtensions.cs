@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DiamondKata
 {
@@ -6,7 +7,9 @@ namespace DiamondKata
     {
         public static IEnumerable<string> Mirror(this IEnumerable<string> items)
         {
-            return items;
+            IReadOnlyCollection<string> allItems = items.ToList();
+            var reversedItems = allItems.Reverse();
+            return allItems.Concat(reversedItems.Skip(1));
         }
     }
 }
