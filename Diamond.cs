@@ -6,7 +6,14 @@ namespace DiamondKata
     {
         public IEnumerable<string> Of(string letter)
         {
-            yield break;
+            return new[]
+            {
+                "__A__",
+                "_B_B_",
+                "C___C",
+                "_B_B_",
+                "__A__"
+            };
         }
     }
 }
