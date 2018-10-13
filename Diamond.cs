@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DiamondKata
 {
@@ -8,10 +9,11 @@ namespace DiamondKata
         {
             return new[]
             {
-                "__A".Mirror(),
-                "_B_".Mirror(),
-                "C__".Mirror()
+                "__A",
+                "_B_",
+                "C__"
             }
+            .Select(line => line.Mirror())
             .Mirror();
         }
     }
