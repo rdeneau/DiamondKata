@@ -6,7 +6,7 @@ namespace DiamondKata
     {
         public static IEnumerable<string> Mirror(this IEnumerable<string> items)
         {
-            return null;
+            return items;
         }
     }
 }

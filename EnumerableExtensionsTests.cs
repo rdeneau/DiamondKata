@@ -10,7 +10,22 @@ namespace DiamondKata
         {
             var items = new[] { "a" };
             var result = items.Mirror();
-            result.Should().BeEquivalentTo(items, options => options.WithStrictOrdering());
+            result.Should().ContainInOrder("a");
+        }
+
+        [Fact]
+        public void Mirror_Should_Repeat_First_Item_At_The_End_Given_Dual_Item_Enumerable()
+        {
+            var items = new[]
+            {
+                "a",
+                "b"
+            };
+            var result = items.Mirror();
+            result.Should().ContainInOrder(
+                "a",
+                "b",
+                "a");
         }
     }
 }
