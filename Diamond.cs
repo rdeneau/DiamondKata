@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DiamondKata
 {
@@ -6,14 +7,22 @@ namespace DiamondKata
     {
         public IEnumerable<string> Of(string letter)
         {
-            return new[]
+            return Mirror(new[]
             {
                 "__A__",
                 "_B_B_",
-                "C___C",
-                "_B_B_",
-                "__A__"
-            };
+                "C___C"
+            });
+        }
+
+        private IEnumerable<string> Mirror(IEnumerable<string> lines)
+        {
+            return lines.Concat(
+                new[]
+                {
+                    "_B_B_",
+                    "__A__"
+                });
         }
     }
 }
