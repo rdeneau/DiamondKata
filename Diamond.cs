@@ -8,7 +8,7 @@ namespace DiamondKata
         {
             return new[]
             {
-                "__A__",
+                "__A".Mirror(),
                 "_B_B_",
                 "C___C"
             }
