@@ -23,7 +23,7 @@ namespace DiamondKata
                                              "_A_");
         }
 
-        [Fact(Skip = "Pending string.Mirror")]
+        [Fact]
         public void Diamond_C()
         {
             var diamondC = diamond.Of("C");
