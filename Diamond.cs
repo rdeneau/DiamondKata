@@ -9,12 +9,19 @@ namespace DiamondKata
         {
             return new[]
             {
-                "__A",
+                EraseExcept("BCA", 'A'),
                 "_B_",
                 "C__"
             }
             .Select(line => line.Mirror())
             .Mirror();
         }
+
+        private static string EraseExcept(string expression, char character) =>
+            expression.ToCharArray()
+                      .Select(c => c == character
+                                       ? character
+                                       : '_')
+                      .Join();
     }
 }
