@@ -8,7 +8,7 @@ namespace DiamondKata
         private const char Filler = '_';
 
         public IEnumerable<string> Of(char letter) =>
-            FromLetters("CBA");
+            FromLetters(letter.SequenceDownToA());
 
         private static IEnumerable<string> FromLetters(string letters) =>
             letters.Reverse()

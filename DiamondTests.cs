@@ -23,7 +23,7 @@ namespace DiamondKata
                                              "_A_");
         }
 
-        [Fact]
+        [Fact(Skip = "Pending SequenceDownToA()")]
         public void Diamond_C()
         {
             var diamondC = diamond.Of('C');
