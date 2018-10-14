@@ -7,18 +7,16 @@ namespace DiamondKata
     {
         private const char Filler = '_';
 
-        public IEnumerable<string> Of(string letter)
-        {
-            return FromLetters("CBA");
-        }
+        public IEnumerable<string> Of(char letter) =>
+            FromLetters("CBA");
 
         private static IEnumerable<string> FromLetters(string letters) =>
             letters.Reverse()
-                   .Select(c => EraseExcept(letters, c))
+                   .Select(c => EraseAllExcept(letters, c))
                    .Select(line => line.Mirror())
                    .Mirror();
 
-        private static string EraseExcept(string source, char character) =>
+        private static string EraseAllExcept(string source, char character) =>
             source.Select(c => EraseExcept(c, character))
                   .Join();
 
