@@ -5,23 +5,27 @@ namespace DiamondKata
 {
     public class Diamond
     {
+        private const char Filler = '_';
+
         public IEnumerable<string> Of(string letter)
         {
             return new[]
             {
-                EraseExcept("BCA", 'A'),
-                "_B_",
-                "C__"
+                EraseExcept("CBA", 'A'),
+                EraseExcept("CBA", 'B'),
+                EraseExcept("CBA", 'C'),
             }
             .Select(line => line.Mirror())
             .Mirror();
         }
 
-        private static string EraseExcept(string expression, char character) =>
-            expression.ToCharArray()
-                      .Select(c => c == character
-                                       ? character
-                                       : '_')
-                      .Join();
+        private static string EraseExcept(string source, char character) =>
+            source.Select(c => EraseExcept(c, character))
+                  .Join();
+
+        private static char EraseExcept(char source, char character) =>
+            source == character
+                ? character
+                : Filler;
     }
 }
