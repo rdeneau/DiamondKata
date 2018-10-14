@@ -11,5 +11,7 @@ namespace DiamondKata
             var reversedItems = allItems.Reverse();
             return allItems.Concat(reversedItems.Skip(1));
         }
+
+        public static string Join(this IEnumerable<char> items) => new string(items.ToArray());
     }
 }
