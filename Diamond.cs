@@ -9,15 +9,14 @@ namespace DiamondKata
 
         public IEnumerable<string> Of(string letter)
         {
-            return new[]
-            {
-                EraseExcept("CBA", 'A'),
-                EraseExcept("CBA", 'B'),
-                EraseExcept("CBA", 'C'),
-            }
-            .Select(line => line.Mirror())
-            .Mirror();
+            return FromLetters("CBA");
         }
+
+        private static IEnumerable<string> FromLetters(string letters) =>
+            letters.Reverse()
+                   .Select(c => EraseExcept(letters, c))
+                   .Select(line => line.Mirror())
+                   .Mirror();
 
         private static string EraseExcept(string source, char character) =>
             source.Select(c => EraseExcept(c, character))
