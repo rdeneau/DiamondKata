@@ -10,12 +10,19 @@ namespace DiamondKata
         private static IEnumerable<char> EnumerateDownToA(char letter)
         {
             yield return letter;
-            if (letter == 'A')
+
+            var previous = letter;
+            while (previous != 'A')
             {
-                yield break;
+                previous = Previous(previous);
+                yield return previous;
             }
-            var previous = 'A';
-            yield return previous;
+        }
+
+        private static char Previous(char letter)
+        {
+            var code = (int)letter;
+            return (char)(code - 1);
         }
     }
 }

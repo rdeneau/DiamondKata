@@ -22,5 +22,11 @@ namespace DiamondKata
             'C'.SequenceDownToA()
                .Should()
                .Be("CBA");
+
+        [Fact]
+        public void Return_SequenceDownToA_Given_Letter_D() =>
+            'D'.SequenceDownToA()
+               .Should()
+               .Be("DCBA");
     }
 }
