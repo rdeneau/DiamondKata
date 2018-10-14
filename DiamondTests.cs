@@ -7,14 +7,14 @@ namespace DiamondKata
     {
         private readonly Diamond diamond = new Diamond();
 
-        [Fact(Skip = "Pending Diamond_C")]
+        [Fact]
         public void Diamond_A()
         {
             var diamondA = diamond.Of('A');
             diamondA.Should().ContainInOrder("A");
         }
 
-        [Fact(Skip = "Pending Diamond_C")]
+        [Fact]
         public void Diamond_B()
         {
             var diamondB = diamond.Of('B');
@@ -23,7 +23,7 @@ namespace DiamondKata
                                              "_A_");
         }
 
-        [Fact(Skip = "Pending SequenceDownToA()")]
+        [Fact]
         public void Diamond_C()
         {
             var diamondC = diamond.Of('C');
@@ -34,7 +34,7 @@ namespace DiamondKata
                                              "__A__");
         }
 
-        [Fact(Skip = "Pending Diamond_C")]
+        [Fact]
         public void Diamond_D()
         {
             var diamondD = diamond.Of('D');
